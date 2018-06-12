@@ -2,3 +2,4 @@ computed和watch的区别
 1.computed默认调用get方法，必须要有return，来校验用户是否存在，判断用户是否注册，不是前端做的，而是要发ajax请求，请求后台，后台返回个值，看是否成功，computed不支持异步
 2.watch的属性名字要和观察者的名字一致（观察者就是v-model里面的属性，v-model里面的属性和data里面的观察者属性是一个），属性名字里面有两个参数，分别是（newVal，oldVal），watch里面的值变化了才能触发watch，watch支持异步，不需要返回值（不需要return），如果watch里面的属性里面写了return，是为了终止代码向下执行
 3.watch和computed的区别在异步上，watch支持异步，computed支持同步，其他情况如果计算的话我们用computed，对于任何复杂逻辑都应该用computed
+4.watch默认只监控一层的数据变化
