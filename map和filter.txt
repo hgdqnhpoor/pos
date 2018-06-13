@@ -1,0 +1,36 @@
+map和filter
+
+//1)filter（如果想删除数组的某一项，可以用filter）,是否操作原数组：不 ；返回结果：过滤后的新数组； 回调函数的返回结果：如果返回true，表示这一项会放到新数组中；
+//1)
+let newAry=[1,2,3,4,5].filter(function (item) {//参数里面正常有index，但是用不到删掉了
+    return 2<item<5//方法错误
+})
+console.log(newAry);//[ 1, 2, 3, 4, 5 ]
+
+//1)
+let newAry1=[1,2,3,4,5].filter(function (item1,index) {
+    return item1>2&&item1<5//return出来的东西是true就会被放到新数组中
+})
+console.log(newAry1);//[ 3, 4 ]
+
+//2)
+//map映射（把数组修改更新用map），将原有数组映射成一个新数组，需求['1','2','3']
+//<li>1</li><li>2</li><li>3</li>
+//不操作原数组 返回新数组 回调函数中返回什么这一项就是什么
+//2)
+let arr1=[1,2,3].map(function (item) {
+    return 2
+})
+console.log(arr1);//[ 2, 2, 2 ]
+//2)
+let arr2=[1,2,3].map(function (item) {
+    return item*3
+})
+console.log(arr2);//[ 3, 6, 9 ]
+//3)
+let arr3=[1,2,3].map(function (item) {
+    return `<li>${item}</li>`//反引号，es6模板字符串，遇见变量用${}取值
+})
+console.log(arr3.join(''));//<li>1</li><li>2</li><li>3</li>
+
+
