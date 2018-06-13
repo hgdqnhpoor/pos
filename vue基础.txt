@@ -21,19 +21,30 @@ for循环运行：
 2）判断条件
 3）循环体
 4）i++
+
+
+//面试:forEach,for in,for,for of的区别 
 let arr=[1,2,3,4,5]
-for(i=0;i<arr.lenght;i++){//编程式
+##for(i=0;i<arr.lenght;i++){//编程式
 console.log(arr[i])
 }
 
-//面试:forEach,for in,for,for of的区别 
-//forEach不支持return
+##//forEach不支持return
 arr.forEach(function（item，index）{//声明式(不关心如何实现)
 //一般es5语法会有两个参数，一般index不用写
 console.log(item)
 })
 
-//遍历数组的时候为什么不采用for in方法,key（属性名）的类型应该是数字，但是typeof检测以后是字符串，string
-for(let key in arr){
-
+##//遍历数组的时候为什么不采用for in方法,key（属性名）的类型应该是数字，但是typeof检测以后是字符串，string
+for(let key in arr){//key会变成字符串类型,包括数组的私有属性也可以被打印出来
+console.log(typeof key)
 }
+
+##//forof,既有return,也不遍历数组的私有属性;
+let obj={school:‘xy’，age：8}//如果非要遍历对象，通过Object.keys将对象的key作为新的数组
+for（let val of arr）{//支持return，并且是值of数组（不能遍历object（对象），只能遍历数组）
+console.log(val)
+}
+
+
+
