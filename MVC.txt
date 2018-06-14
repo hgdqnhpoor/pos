@@ -1,0 +1,4 @@
+MVC(单向的):（backbone框架已经过时了）
+M:Model数据
+v：view视图
+c：controller控制器(controller会把Model和view关联起来)

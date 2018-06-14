@@ -1,0 +1,4 @@
+MVVM模式(双向数据绑定，也不全是双向的，也有单向的。angular、vue算是典型的MVVM模型)：
+M:Model数据模型
+V：视图模板
+vm:view-model视图模型
