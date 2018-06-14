@@ -1,0 +1,43 @@
+//arrow:箭头函数中没有this；没有arguments；不可以用做构造函数，不可以被new，否则会抛出一个错误；不可以使用yield命令，因此不可以作为Generator函数
+
+//如何更改this的指向问题
+//1.call apply bind
+//2.var that=this
+//3.arrowFunction:去上级作用域中查找
+
+//如何确定this是谁？
+//1.看谁调用的this，.前面是谁this就是谁
+
+//原生的函数
+function a(b) {
+    return b+1;
+}
+//把原生的写成箭头函数,定义一个a函数
+// 箭头函数
+//
+// 如果箭头函数的参数只有一个，那么小括号可以省去；
+// 函数体中只有一条语句，并且不是return语句，那么大括号可以省去；
+// 函数体中只有一条return语句，可以把大括号和return都省去；
+ let a=b=>b+1//去掉function关键字，有一个参数可以省略小括号；小括号和大括号之间有个箭头；如果没有大括号直接是返回值；有大括号必须写return；
+
+//eg:
+//原生写
+function a(b) {
+    return function (c) {
+        return b+c
+    }
+}
+a(1)(2);//b+c=3
+//箭头函数写
+let a=b=>c=>b+c//高阶函数(>=俩箭头的都是高阶函数)
+console.log(a(1)(2));
+
+let a=function (b) {
+    return function (c) {
+        return b+c
+    }
+}()
+//闭包:函数执行的一瞬间叫闭包,(不销毁的作用域),当执行后返回的结果必须是引用数据类型值，并且被外界的变量接受
+//把forEach写法写成箭头函数
+[1,2,3].forEach(item=>console.log(item))
+//在vue中很多时候不能用箭头函数
