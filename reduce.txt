@@ -1,0 +1,34 @@
+reduce:
+//1)reduce收敛(用于求和，叠加，两个数组合成一个数组)，有四个参数，返回的结果是叠加后的结果，原数组不发生变化，回调函数返回的结果：
+//prev代表数组的第一项，next是数组的第二项
+//第二次prev是undefined，next是数组的第三项
+//第三次prev是undefined，next是数组的第四项
+//第四次prev是undefined，next是数组的第五项
+//为什么prev会变成undefined，是因为回调函数中没有写返回值
+let sum=[1,2,3,4,5].reduce(function (prev,next,index,item) {
+    //console.log(arguments);
+    console.log(prev, next);
+    // 1 2
+    // 100 3
+    // 100 4
+    // 100 5
+    //需求：求和
+    return prev+next;//本次的返回值100，会作为下一次的prev
+})
+console.log(sum);
+
+let sum1=[{price:30,count:2},{price:30,count:3},{price:30,count:4}].reduce(function (prev,next,index,item) {
+    console.log(prev, next);
+    //prev+next=输出的当前值是下一次的prev
+    //0   +  60
+    //60  +  90
+    //150 +  120
+    return prev+next.price*next.count
+},0)//0是默认指定的第一次的prev
+console.log(sum1);
+
+//[[1,2,3]，[4,5,6],[7,8,9]]把二维数组变成一维数组
+let arr8=[[1, 2, 3], [4, 5, 6], [7, 8, 9]].reduce(function (prev,next,index,item) {
+    return prev.concat(next)
+});
+console.log(arr8);//[ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]

@@ -1,0 +1,14 @@
+some和every
+//1）some找true，找到ture后停止，返回true;如果找到最后没有自己想找的那项，结果就是false
+let arr6=[7,8,9]
+let result2=arr6.some(function (item) {
+    return item.toString().indexOf(9)>-1
+})
+console.log(result2);//true
+
+//2）every找false，找到false后停止，返回false;循环没一项，只要第一个不符合条件就是false，就停止，返回的也是false
+let arr7=[10,11,12];
+let result3=arr7.every(function (item) {
+    return item.toString().indexOf(12)
+});
+console.log(result3);//false

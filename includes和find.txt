@@ -3,7 +3,7 @@ includes和find
 let arr4 = [1, 2, 3, 4, 55];
 console.log(arr4.includes(5));//返回的是布尔类型
 
-//2）find返回找到的那一项，不会改变原数组,回调函数中返回true表示找到了，找到后停止循环
+//2）find返回找到的那一项，不会改变原数组,回调函数中返回true表示找到了，找到后停止循环；如果没找到那一项，返回undefined
 let result = arr4.find(function (item, index) {
     //console.log(item);
     console.log(item.toString());
