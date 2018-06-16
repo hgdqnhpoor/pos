@@ -1,0 +1,14 @@
+#安装vue
+1)cdn的方式(给个网址)
+2)
+···
+1.npm init -y(初始化会产生一个package.json的文件，这个文件用来描述项目的依赖,不能有大写，特殊字符，中文；而且不要和安装包的名字也就是vue安装包的名字一样，license：MIT，MIT是开源协议；package.json文件中不能写注释；vue16年6-7月份出的，如果不小心把node-module是删了的话，直接用npm install就能安装回来)
+2.cd 当前项目目录下
+3.npm install vue
+···
+#兼容性
+Vue.js不支持IE8及其以下版本，因为Vue.js使用了IE8不能模拟的ECMAScript5特性。Vue.js支持所有兼容ECMAscript5的浏览器
+
+##Object.defineProperty(es5)没有替代的方案，babel也只能转化为es5的方案，无法降级
+-不支持IE8及以下版本
+-npm安装node package manager(我们前端的代码也会在npm这个网站上发布上去)
