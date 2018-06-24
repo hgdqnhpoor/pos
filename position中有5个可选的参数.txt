@@ -1,0 +1,51 @@
+position的五个参数(static,relative,absolute,fixed,inherit)
+1.static是position的默认值,元素按照标准流的方式进行正常的排列
+2.一旦有了定位属性之后,层就可以相互覆盖了
+3.relative是指相对定位,使用position:relative仍处于正常的文档流中,我们可以通过left,top,right,bottom来改变元素的位置
+4.position:relative相对定位的特质的属性:设置了定位属性之后,就会出现元素相互覆盖了,然后看看这些元素(top,left,right,botton)如何控制相对定位的
+5.我们修改div的不同位置,不同方向的时候,响应的坐标轴也发生了改变,假如我们在position:relative下设置了left：50px；top：50px,给它一些参数,元素会相对于网页的最左最顶点为起始点,向右做正方向运动,以网页的下端作为y轴的正轴进行移动；如果我们设置了right和bottom,元素将相对于网页最左顶端为起始点,以网页的左端为x轴,以网页的上端为y正轴进行移动
+6.基本上写left就是右移，right左移，top下移，bottom上移，这样记对吧
+7.position：absolute就是绝对定位,使用了absolute参数的元,配合top,right,bottom,left的属性,元素将会脱离正常的文档流,在整个网页中都是可以进行移动定位的,因为有了层级的概念,后写的元素会覆盖先写的元素,*{margin:0,padding:0是把带边距的都清除掉},此时我们发现了html元素的高度就变成了0,此时给div设置了定位属性,所以使我们的div脱离了文档流,导致实际上我们的html中已经不存在红色区块的div,给红色元素设置定位元素,蓝色元素没有设置定位元素,他们仍然以标准流的方式排列,为什么我们设置了定位属性却没有定位特性呢,因为我们没有设置left,right,top,bottom定位元素{position:absolute,left:50,top:50},此时红色区块就浮动在了蓝色区块上面,蓝色区块是红色区块的兄弟区块,这就有了层的概念;此时红色区块相对于网页的从左起往右的x正轴进行了移动,红色区块则以我们网页的最左上角,以从上往下的顺序为y正轴进行了移动,把定位里面的{position:absolute,right:100px,top:100px},我们发现了div就以我们网页的右上角开始定位;{position:absolute,right:150px,top:150px},此刻我们的x正轴从刚才从左至右就变成了从右至左;假如我们把{position:absolut里面的,left:150px;bottom:150px};{position:absolut,right:150px,bottom:150px},它是以我们窗口的右下角为起点,从右至左为x正轴,以下到上为y的正轴;假如我们一旦设置了我们网页的高度,给body进行高度的设置body{height:3000px},我们此刻设置了这么高这样一个带有定位属性的元素,它的最底边设置了高度为0,是否会变为网页最下面呢?移动我们的网页,虽然移动了我们的网页,但是红色区块仍然是相对于我们窗口的最右下角进行定位的,我们还可以往下定位的;假设我们把{position:absolute,left:150px,top:1500px},我们就发现了我们红色区块属于某个网页的某个位置;如果我们想把div放到某个网页的下面去{position:absolute,我们可以设置它的right:150px,bottom:-500px},此时的红色区块就跑到下面去了,这几个就是我们今天讲的绝对定位中的top,right,bottom,left中的几个属性的特性,以及它在网页中所表现出来的效果;
+8.position:absolute,给子元素设置绝对定位,父元素没有设置定位,一旦它的父元素和子元素都不具有定位属性,它将会以我们窗口的四个角进行定位
+9.position:fixed固定定位即使用了fixed参数的元素配合top,right,bottom,left的位置属性,元素会脱离正常的文档流,不受标准流的约束,在整个窗口进行移动定位,并拥有层级的概念,带有固定定位的元素将在整个窗口进行位置移动;常用的使用场景有(1.对联广告,登录弹窗等);假如我们改变{position:fixed,right:0,top:0},此刻它的定位位置就发生了改变,这一点和绝对定位是非常类似的;假如把{position:fixed,把right改成left:0,top改为bottom:0};posotion:fixed会相对于某网页的四个顶点作为初始点进行定位移动,任何元素都可以用position:fixed(任何元素可以使用固定定位),这一点是和绝对定位有区别的
+10.position：fixed,此时红色子元素区块是相对于网页的左上角进行定位的,并不受制于父元素,即使它的父元素带有了定位属性,这就是固定定位和绝对定位的区别
+<style>
+        .father{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: green;
+            left: 300px;
+            top: 300px;
+        }
+        .test{
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            background: red;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+10.position:inherit,响应元素可以继承它父元素的一些属性,具体在代码中体现的是什么样子呢?此刻即使子元素设置了position:inherit属性,left:100,top:100,但是页面上的子元素并没有变化,而且我们父元素中没有任何的定位属性,因此子元素也继承不了任何的父元素的定位属性,可以给我们的父元素设置;此刻给我们的父元素添加了相对定位,此刻子元素就有了定位,发生了位置的变化,虽然没有给子元素设置position:relative,以为我们给父元素设置了position:relative,那么我们子元素也有了父元素上面的position:relative,因此子元素设置了继承position:relative;如果给父元素设置position:absolute,那么子元素也继承了父元素的position:absolute;如果给我们的父元素设置position:fixed,子元素的依然是left:100,top:100,并给父元素设置left:200，top:200,子元素继承了父元素的position:fixed,因为position:fixed是固定定位是不受制于任何元素的,这就是我们的inherit的执行效果
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            //position: relative;
+            //position:absolute
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+        .test{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: inherit;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
