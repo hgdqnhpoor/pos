@@ -5,6 +5,7 @@
 1.npm init -y(初始化会产生一个package.json的文件，这个文件用来描述项目的依赖,不能有大写，特殊字符，中文；而且不要和安装包的名字也就是vue安装包的名字一样，license：MIT，MIT是开源协议；package.json文件中不能写注释；vue16年6-7月份出的，如果不小心把node-module是删了的话，直接用npm install就能安装回来)
 2.cd 当前项目目录下
 3.npm install vue
+4.npm install axios bootstrap(很多时候我们想做响应式的布局,响应式的需要用rem或者工具,但是pc端不能用rem,bootstrap为我们提供了栅格式布局,bootstrap可以帮我们提供一些写好的样式,包括颜色,模式,布局,导航,轮播图,下拉菜单,都可以,bootstrap可以处理响应式布局,bootstrap颜色不是特别好看,Bootstrap 是全球最受欢迎的前端组件库，用于开发响应式布局、移动设备优先的WEB项目)
 ···
 #兼容性
 Vue.js不支持IE8及其以下版本，因为Vue.js使用了IE8不能模拟的ECMAScript5特性。Vue.js支持所有兼容ECMAscript5的浏览器

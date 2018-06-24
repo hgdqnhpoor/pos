@@ -1,0 +1,10 @@
+z-index:
+可以设置元素的叠加顺序,但依赖定位元素
+z-index大的元素会覆盖z-index小的元素
+z-index为auto的元素不参与层级比较
+z-index为负值,元素被普通流中的元素覆盖
+1.所有的定位属性都是有层级的,先写的带有定位属性的元素会被后写的带有定位属性的元素所覆盖
+2.我们z-index属性提供了3个参数,分别是number,auto,inherit;auto是网页中的默认属性,一旦给我们网页中的元素添加auto,将不产生任何作用,当我们的ie6和i7下呢z-index不存在的时候,z-index的默认值是0,除此之外浏览器默认的z-index是auto
+3.而z-index:number是可以设置层级的大小的,number的数字越大代表层级越大
+4.而z-index:inherit就代表我们继承的意思,
+5.z-index是为定位属性服务的,z-index只作用于带有定位属性的元素;我们的postion属性为static的时候,其实就相当于没有定位属性,我们z-index没有任何效果的,
