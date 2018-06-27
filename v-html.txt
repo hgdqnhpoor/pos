@@ -1,1 +1,1 @@
-v-html把html字符串当成html渲染,一定是可信任的html,否则容易导致恶意的攻击
+v-html把html字符串当成html渲染,一定是可信任的html,否则容易导致恶意的攻击;v-htm将html字符串转化为html格式

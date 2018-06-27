@@ -1,0 +1,2 @@
+v-text解决一行闪烁问题
+v-cloak解决一块一块闪烁问题,如果加在div上面,div里面的内容不会再有{{}}闪烁问题,v-cloak是在vue加载完整个dom后,配合css使用,需要手动写个样式,把带v-cloak的样式全部隐藏掉,渲染完成后,自动给v-cloak给删掉,删掉后display:none就没了,v-cloak很少用,后期都可以不采用,使用v-cloak需要加样式

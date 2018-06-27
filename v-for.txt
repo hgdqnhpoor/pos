@@ -1,0 +1,3 @@
+v-for循环(数组,对象,字符串,数字)
+<div v-for='(value,index) in/of 数组/字符串/对象/数字'></div>
+<div v-for='(value,key,index) in/of 数组/字符串/数字'></div>
