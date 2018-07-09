@@ -1,0 +1,19 @@
+-v-model(如果checkbox,select多选是数组,提供一个value属性)(radio checkbox分组靠的是-v-model),checked selected不存
+-修饰符 .number .lazy
+-按键修饰符 .enter .ctrl .keyCode
+-事件  
+     @事件.stop可以替代原生的 
+     e.stopPropagation(),e.cancelBubble=true;//stopPropagation,cancelBubble=true;子父关系才有
+     和冒泡相对的就是捕获
+
+     @事件.capture
+     xxx.addEventListener('click',fn),默认是false是冒泡,true是捕获
+   
+     
+     @事件.prevent
+     preventDefault,returnValue=false
+
+     @事件.self点自己才有效果
+-jquery once//jquery事件绑定方式once,一般按钮的话只能点一次;flag&&a()绑定一个事件flag存在,flag有我才走a,要不不走了
+-e.srcElement&&e.target判断事件源绑定事件//当前点的哪个事件源,我才执行
+-npm init -y,npm install vue axios bootstrap

@@ -1,0 +1,3 @@
+##v-if/v-show
+- v-if操作的是dom,v-if可以和v-else-if一起用,还可以跟v-else连用
+-v-show是操作css样式的

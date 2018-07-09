@@ -1,0 +1,4 @@
+## v-bind简写:
+-动态绑定"属性",页面上用{{}}获取值
+-<img :src="src"/ :width="w">
+-class
